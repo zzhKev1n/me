@@ -19,10 +19,10 @@
     ],
     "version": "Darwin Kernel Version 18.6.0: Thu Apr 25 23:16:27 PDT 2019; root:xnu-4903.261.4~2/RELEASE_X86_64",
     "python_build": [
-        "v3.7.3:ef4ec6ed12",
-        "Mar 25 2019 16:52:21"
+        "default",
+        "Mar 27 2019 16:54:48"
     ],
-    "python_compiler": "Clang 6.0 (clang-600.0.57)",
+    "python_compiler": "Clang 4.0.1 (tags/RELEASE_401/final)",
     "python_implementation(": "CPython",
     "python_version(": "3.7.3",
     "python_version_tuple": [
