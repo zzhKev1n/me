@@ -10,8 +10,8 @@ import platform
 
 # I think this will print "hello! Let's get started" by calling the print function.
 print("hello! Let's get started")  # it printed "hello! Let's get started"
-
-some_words = ['what', 'does', 'this', 'line', 'do', '?']
+#Defining a array named some_words
+some_words = ['what', 'does', 'this', 'line', 'do', '?']    # it defined an array with 6 strings
 
 for word in some_words:
     print(word)

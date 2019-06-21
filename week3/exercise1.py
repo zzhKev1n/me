@@ -12,7 +12,14 @@ def loop_ranger(start, stop=None, step=1):
     The look up the docs for range(), you can answer this with just the range 
     function, but we'd like you to do it the long way, probably using a loop.
     """
-    return None
+
+    n = start
+    result1 = []
+    if n <= stop:
+        result1.append(list(n))
+        n = n + 1
+
+    return result1
 
 
 def lone_ranger(start, stop, step):
@@ -20,6 +27,9 @@ def lone_ranger(start, stop, step):
 
     Look up the docs for range() and wrap it in a 1:1 way
     """
+
+    
+
     return None
 
 
@@ -29,7 +39,14 @@ def two_step_ranger(start, stop):
     Sometimes you want to hide complexity.
     Make a range function that always has a step size of 2
     """
-    return None
+
+    n = start
+    result3 = []
+    if n <= stop:
+        result3.append(list(n))
+        n = n + 2
+
+    return result3
 
 
 def stubborn_asker(low, high):
@@ -40,7 +57,14 @@ def stubborn_asker(low, high):
 
     Look up the docs for input
     """
-    return None
+
+    a = 0
+    if a <= low:
+        a = a + 1
+    elif a >= high:
+        a = a - 1
+
+    return a
 
 
 def not_number_rejector(message):
@@ -50,6 +74,9 @@ def not_number_rejector(message):
     (e.g. "cow", "six", "8!") then throw it out and ask for an actual number.
     When you do get a number, return it.
     """
+
+
+
     return None
 
 
@@ -61,6 +88,9 @@ def super_asker(low, high):
     Try to call at least one of the other functions to minimise the
     amount of code.
     """
+
+    
+
     return None
 
 

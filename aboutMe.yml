@@ -2,5 +2,5 @@ name: Zhihui Zhang
 studentNumber: z5057613
 officialEmail: z5057613@ad.unsw.edu.au
 contactEmail:
-  firstBit: firstName.Lastname  # this avoids spam, the @ is implied
+  firstBit: firstName.Lastname  # this avoids spam, the @ is impliedk
   otherBit: whereIwork.com
