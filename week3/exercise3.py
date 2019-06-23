@@ -25,7 +25,66 @@ def advancedGuessingGame():
     Remember to think modular. Try to keep your functions small and single
     purpose if you can!
     """
-     print("two point three".format(int))
+    
+    print("\nWelcome to the guessing game!")
+    print("A number between _ and _ ?")
+
+    lowerBound = input("Enter an lower bound: ")
+    try:
+      lowerBound = int(lowerBound)
+    except ValueError:
+      IntegerTest0 = False
+      while IntegerTest0 == False:
+        try:
+          lowerBound = int(lowerBound)
+          IntegerTest0 = True
+        except ValueError:
+          lowerBound = input("Enter an lower bound: ")
+
+    upperBound = input("Enter an upper bound: ")
+    try:
+      upperBound = int(upperBound)
+    except ValueError:
+      IntegerTest = False
+      while IntegerTest == False:
+        try:
+          upperBound = int(upperBound)
+          IntegerTest = True
+        except ValueError:
+          upperBound = input("Enter an upper bound: ")
+    
+    lowerBound = int(lowerBound)
+    upperBound = int(upperBound)
+    print("OK then, a number between {a} and {b} ?".format(a = lowerBound, b = upperBound))
+
+    actualNumber = random.randint(lowerBound, upperBound)
+
+    guessed = False
+
+    while not guessed:
+        guessedNumber = input("Guess a number: ")
+        try:
+          guessedNumber = int(guessedNumber)
+        except ValueError:
+          IntegerTest1 = False
+          while IntegerTest1 == False:
+            try:
+              guessedNumber = int(guessedNumber)
+              IntegerTest1 = True
+            except ValueError:
+              guessedNumber = input("Guess a number: ")
+
+        if guessedNumber < lowerBound or guessedNumber > upperBound:
+          print("Guess a number in the range, fool.")
+        else:
+          print("You guessed {},".format(guessedNumber),)
+          if guessedNumber == actualNumber:
+            print("You got it!! It was {}".format(actualNumber))
+            guessed = True
+          elif guessedNumber < actualNumber:
+            print("Too small, try again :'(")
+          else:
+            print("Too big, try again :'(")
 
     return "You got it!"
     # the tests are looking for the exact string "You got it!". Don't modify that!

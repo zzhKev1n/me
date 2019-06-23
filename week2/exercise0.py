@@ -71,6 +71,7 @@ def shout(a_string):
     return the_answer
 
 
+
 def really_shout(a_string):
     """Return a string in uppercase, with an exclamation mark on the end.
 

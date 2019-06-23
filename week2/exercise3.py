@@ -242,9 +242,22 @@ def loops_7():
     lots of diagrams!
     """
 
-    
+    k = 0
+    result8 = []
+    result9 = []
+    FinalResult = []
+    for i in range(9):
+        result8.append(" ")
+    for j in range(5):
+        temp4 = 4 - k
+        temp5 = 4 + k
+        result8[temp4] = "*"
+        result8[temp5] = "*"
+        result9 = list(result8)
+        FinalResult.append(result9)
+        k = k + 1
 
-    return None
+    return FinalResult
 
 
 def lp(some_kind_of_list, exercise_name):
