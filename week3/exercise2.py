@@ -19,7 +19,9 @@ def exampleGuessingGame():
     upperBound = int(upperBound)
 
     actualNumber = random.randint(0, upperBound)
-
+    a = [1, 2, 3]
+    b = type(a)
+    c = str(b)
     guessed = False
 
     while not guessed:
@@ -32,8 +34,8 @@ def exampleGuessingGame():
             print("Too small, try again :'(")
         else:
             print("Too big, try again :'(")
-    return "You got it!"
 
+    return "You got it!"
 
 if __name__ == "__main__":
     exampleGuessingGame()

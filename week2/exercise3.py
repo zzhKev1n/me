@@ -182,7 +182,7 @@ def loops_5():
     for ii in range(10):
         temp1 = []
         for jj in range(5):
-            temp1.append('(i{a}, j{b})'.format(a = ii, b = jj))
+            temp1.append('(i{a}, j{b})'.format(a = ii, b = jj)
         result6.append(temp1)
 
     return result6

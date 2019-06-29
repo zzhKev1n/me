@@ -24,14 +24,14 @@ def binary_search(low, high, actual_number):
     things much easier.
     """
     tries = 0
-    guess = 0
-    
+    guess = round(low + 0.5*(high - low), None) 
+
     while guess != actual_number:
-        guess = round(low + 0.5*(high - low), None)
         if guess > actual_number:
             high = guess
         elif guess < actual_number:
             low = guess
+        guess = round(low + 0.5*(high - low), None) 
         tries = tries + 1
         
     return {"guess": guess, "tries": tries}

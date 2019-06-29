@@ -32,7 +32,7 @@ def advancedGuessingGame():
     lowerBound = input("Enter an lower bound: ")
     try:
       lowerBound = int(lowerBound)
-    except ValueError:
+    except Exception:
       IntegerTest0 = False
       while IntegerTest0 == False:
         try:
@@ -44,7 +44,7 @@ def advancedGuessingGame():
     upperBound = input("Enter an upper bound: ")
     try:
       upperBound = int(upperBound)
-    except ValueError:
+    except Exception:
       IntegerTest = False
       while IntegerTest == False:
         try:
@@ -65,13 +65,13 @@ def advancedGuessingGame():
         guessedNumber = input("Guess a number: ")
         try:
           guessedNumber = int(guessedNumber)
-        except ValueError:
+        except Exception:
           IntegerTest1 = False
           while IntegerTest1 == False:
             try:
               guessedNumber = int(guessedNumber)
               IntegerTest1 = True
-            except ValueError:
+            except Exception:
               guessedNumber = input("Guess a number: ")
 
         if guessedNumber < lowerBound or guessedNumber > upperBound:

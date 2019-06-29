@@ -13,14 +13,11 @@ def loop_ranger(start, stop=None, step=1):
     function, but we'd like you to do it the long way, probably using a loop.
     """
 
-    n = start
     result1 = []
-    if n <= stop:
-        result1.append(list(n))
-        n = n + 1
-
+    while start < stop:
+        result1.append(start)
+        start = start + step
     return result1
-
 
 def lone_ranger(start, stop, step):
     """Duplicate the functionality of range.
@@ -28,9 +25,11 @@ def lone_ranger(start, stop, step):
     Look up the docs for range() and wrap it in a 1:1 way
     """
 
-    
+    result2 = []
+    for i in range(start, stop, step):
+        result2.append(i)
 
-    return None
+    return result2
 
 
 def two_step_ranger(start, stop):
@@ -40,11 +39,9 @@ def two_step_ranger(start, stop):
     Make a range function that always has a step size of 2
     """
 
-    n = start
     result3 = []
-    if n <= stop:
-        result3.append(list(n))
-        n = n + 2
+    for i in range(start, stop, 2):
+        result3.append(i)
 
     return result3
 
@@ -58,13 +55,12 @@ def stubborn_asker(low, high):
     Look up the docs for input
     """
 
-    a = 0
-    if a <= low:
-        a = a + 1
-    elif a >= high:
-        a = a - 1
+    InputNumber = input("Please input a number: ")
+    InputNumber = int(InputNumber)
+    while InputNumber < low or InputNumber > high:
+        InputNumber = input("Outside of range, please input another number: ")
 
-    return a
+    return InputNumber
 
 
 def not_number_rejector(message):
@@ -75,9 +71,12 @@ def not_number_rejector(message):
     When you do get a number, return it.
     """
 
-
-
-    return None
+    if (message.isdigit()):
+        message = int(message)
+    else:
+        message = input("Please input an integer number: ")
+    
+    return message
 
 
 def super_asker(low, high):
@@ -88,10 +87,21 @@ def super_asker(low, high):
     Try to call at least one of the other functions to minimise the
     amount of code.
     """
-
     
+    SuperAskerNumber = input("Please input your number: ")
+    IsNum = False
+    while IsNum == False:
+        try:
+            SuperAskerNumber = int(SuperAskerNumber)
+            IsNum = True
+        except Exception:
+            SuperAskerNumber = input("Please input your number: ")
 
-    return None
+    SuperAskerNumber = int(SuperAskerNumber)
+    while SuperAskerNumber < low or SuperAskerNumber > high:
+        SuperAskerNumber = input("Outside of range, please input another number: ")
+    
+    return SuperAskerNumber
 
 
 if __name__ == "__main__":
