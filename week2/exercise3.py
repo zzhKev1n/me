@@ -178,14 +178,15 @@ def loops_5():
     you'll come to see the pros and cons of each over time.
     """
 
-    result6 = []
-    for ii in range(10):
+    results7 = []
+
+    for ii in range (10):
         temp1 = []
         for jj in range(5):
-            temp1.append('(i{a}, j{b})'.format(a = ii, b = jj)
-        result6.append(temp1)
+            temp1.append('(i{a}, j{b})'.format(a=ii,b=jj))
+        results7.append(temp1)
 
-    return result6
+    return results7
 
 
 def loops_6():

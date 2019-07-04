@@ -3,4 +3,4 @@ studentNumber: z5057613
 officialEmail: z5057613@unsw.edu.au
 contactEmail:
   firstBit: firstName.Lastname  # this avoids spam, the @ is impliedk
-  otherBit: whereIwork.com
+  otherBit: whereIwork.com 
