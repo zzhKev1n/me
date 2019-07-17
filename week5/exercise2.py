@@ -151,8 +151,18 @@ def square_koch(t, order, size):
     Leave the turtle facing the same direction.
 
     """
-    trace = ""
     # write the rest of the function here.
+    trace = ""
+    if order == 0:
+        t.forward(size)
+    else:
+        trace += koch(t, order-1, size/3)   # Go 1/3 of the way
+        t.left(90)
+        trace += koch(t, order-1, size/3)
+        t.right(180)
+        trace += koch(t, order-1, size/3)
+        t.left(90)
+        trace += koch(t, order-1, size/3)
     return str(order) + trace
     pass
 
