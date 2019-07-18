@@ -174,27 +174,17 @@ def tell_me_about_this_right_triangle(facts_dictionary):
 
 
 def triangle_master(base, height, return_diagram=False, return_dictionary=False):
-    if return_diagram is False:
-        if return_dictionary is False:
-            return_dictionary = get_triangle_facts(base, height, units="mm")
-            return_diagram = tell_me_about_this_right_triangle(return_dictionary)
-            return None
-        if return_dictionary is True:
-            try:
-                return_dictionary.is_dict()
-            except Exception:
-                return_dictionary = return_dictionary.json()
-            return return_dictionary
-    elif return_dictionary is False:
-        if return_diagram is True:
-            #return_dictionary = get_triangle_facts(base, height, units="mm")
-            #return_dictionary["Diagram"] = return_diagram
-            return_diagram = str(return_diagram)
-            return return_dictionary
+    f=get_triangle_facts(base, height)
+    d=tell_me_about_this_right_triangle(f)
+    if return_diagram and return_dictionary:
+        return {"diagram": d, "facts":f}
+    elif return_diagram:
+        return d
+    elif return_dictionary:
+        return f
     else:
         print("You're an odd one, you don't want anything!")
 
-triangle_master(5,5)
 
 def wordy_pyramid(api_key):
     import requests
@@ -208,7 +198,7 @@ def wordy_pyramid(api_key):
     )
     pyramid_list = []
     for i in range(3, 21, 2):
-        url = baseURL.format(api_key="", length=i)
+        url = baseURL.format(api_key="ujfllutaqbo8f3connhf4bryua6sw18yujn05v1ojzmyfsxx3", length=i)
         r = requests.get(url)
         if r.status_code is 200:
             message = r.json()[0]["word"]
@@ -217,7 +207,7 @@ def wordy_pyramid(api_key):
             print("failed a request", r.status_code, i)
             i = i - 2
     for i in range(20, 3, -2):
-        url = baseURL.format(api_key="", length=i)
+        url = baseURL.format(api_key="ujfllutaqbo8f3connhf4bryua6sw18yujn05v1ojzmyfsxx3", length=i)
         r = requests.get(url)
         if r.status_code is 200:
             message = r.json()[0]["word"]
@@ -229,7 +219,7 @@ def wordy_pyramid(api_key):
 
 
 def get_a_word_of_length_n(length):
-    """import requests
+    import requests
     baseURL = (
         "http://api.wordnik.com/v4/words.json/randomWords?"
         "api_key={api_key}"
@@ -237,13 +227,13 @@ def get_a_word_of_length_n(length):
         "&maxLength={wordlength}"
         "&limit=1"
     )
-    url = baseURL.format(api_key="", wordlength=length)
+    url = baseURL.format(api_key="ujfllutaqbo8f3connhf4bryua6sw18yujn05v1ojzmyfsxx3", wordlength=length)
     r = requests.get(url)
     while r.status_code is 200:
         result1 = r.json()[0]['word']
     else:
-        r = requests.get(url)"""
-    pass
+        r = requests.get(url)
+    return result1
 
 
 def list_of_words_with_lengths(list_of_lengths):
