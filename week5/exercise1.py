@@ -203,6 +203,7 @@ def wordy_pyramid(api_key):
         if r.status_code is 200:
             message = r.json()[0]["word"]
             pyramid_list.append(message)
+            print(pyramid_list)
         else:
             print("failed a request", r.status_code, i)
             i = i - 2
