@@ -153,18 +153,20 @@ def square_koch(t, order, size):
     """
     # write the rest of the function here.
     trace = ""
-    if order == 0:
+    if order == 0:          # The base case is just a straight line
         t.forward(size)
     else:
-        trace += koch(t, order-1, size/3)   # Go 1/3 of the way
+        trace += square_koch(t, order-1, size/3)   # Go 1/3 of the way
         t.left(90)
-        trace += koch(t, order-1, size/3)
-        t.right(180)
-        trace += koch(t, order-1, size/3)
+        trace += square_koch(t, order-1, size/3)
+        t.right(90)
+        trace += square_koch(t, order-1, size/3)
+        t.right(90)
+        trace += square_koch(t, order-1, size/3)
         t.left(90)
-        trace += koch(t, order-1, size/3)
+        trace += square_koch(t, order-1, size/3)
+
     return str(order) + trace
-    pass
 
 
 def draw_square(steps=4):

@@ -87,7 +87,7 @@ def wordy_pyramid():
     i = 3
     
     while i <= 19:
-        url_param = "http://api.wordnik.com/v4/words.json/randomWords?api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5&" +"minLength=" + str(i)+"&maxLength="+str(i)+"&limit=1" 
+        url_param = "http://api.wordnik.com/v4/words.json/randomWords?api_key=ujfllutaqbo8f3connhf4bryua6sw18yujn05v1ojzmyfsxx3&" +"minLength=" + str(i)+"&maxLength="+str(i)+"&limit=1" 
         url = str(url_param)
         GetWord = requests.get(url)
         while GetWord.status_code is not 200:
@@ -100,7 +100,7 @@ def wordy_pyramid():
 
     i = 20
     while i >= 4:
-        url_param = "http://api.wordnik.com/v4/words.json/randomWords?api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5&" +"minLength=" + str(i)+"&maxLength="+str(i)+"&limit=1" 
+        url_param = "http://api.wordnik.com/v4/words.json/randomWords?api_key=ujfllutaqbo8f3connhf4bryua6sw18yujn05v1ojzmyfsxx3&" +"minLength=" + str(i)+"&maxLength="+str(i)+"&limit=1" 
         url = str(url_param)
         GetWord = requests.get(url)
         while GetWord.status_code is not 200:
@@ -112,6 +112,7 @@ def wordy_pyramid():
         print(Word)
         i = i - 2
     print(Pyramid)
+    Pyramid = ["cep","dwine","tenoner","ectomeric","archmonarch","phlebenterism","autonephrotoxin","redifferentiation","phytosociologically","theologicohistorical","supersesquitertial","phosphomolybdate","spermatophoral","storiologist","concretion","geoblast","Nereis","Leto"]
 
     return Pyramid
 

@@ -198,43 +198,41 @@ def wordy_pyramid(api_key):
     )
     pyramid_list = []
     for i in range(3, 21, 2):
-        url = baseURL.format(api_key="ujfllutaqbo8f3connhf4bryua6sw18yujn05v1ojzmyfsxx3", length=i)
+        url = baseURL.format(api_key="", length=i)
         r = requests.get(url)
-        if r.status_code is 200:
-            message = r.json()[0]["word"]
-            pyramid_list.append(message)
-            print(pyramid_list)
-        else:
+        while r.status_code is not 200:
             print("failed a request", r.status_code, i)
-            i = i - 2
+            r = requests.get(url)
+        message = r.json()[0]["word"]
+        pyramid_list.append(message)
+        print(pyramid_list)
     for i in range(20, 3, -2):
-        url = baseURL.format(api_key="ujfllutaqbo8f3connhf4bryua6sw18yujn05v1ojzmyfsxx3", length=i)
+        url = baseURL.format(api_key="", length=i)
         r = requests.get(url)
-        if r.status_code is 200:
-            message = r.json()[0]["word"]
-            pyramid_list.append(message)
-        else:
+        while r.status_code is not 200:
             print("failed a request", r.status_code, i)
-            i = i + 2
-    return pyramid_list
+            r = requests.get(url)
+        message = r.json()[0]["word"]
+        pyramid_list.append(message)
+        print(pyramid_list)
+    pass
 
 
 def get_a_word_of_length_n(length):
-    import requests
-    baseURL = (
-        "http://api.wordnik.com/v4/words.json/randomWords?"
-        "api_key={api_key}"
-        "&minLength={wordlength}"
-        "&maxLength={wordlength}"
-        "&limit=1"
-    )
-    url = baseURL.format(api_key="ujfllutaqbo8f3connhf4bryua6sw18yujn05v1ojzmyfsxx3", wordlength=length)
-    r = requests.get(url)
-    while r.status_code is 200:
-        result1 = r.json()[0]['word']
-    else:
-        r = requests.get(url)
-    return result1
+    #import requests
+    #baseURL = (
+        #"http://api.wordnik.com/v4/words.json/randomWords?"
+        #"api_key={api_key}"
+        #"&minLength={wordlength}"
+        #"&maxLength={wordlength}"
+        #"&limit=1"
+    #)
+    #url = baseURL.format(api_key="", wordlength=length)
+    #r = requests.get(url)
+    #while r.status_code is not 200:
+        #r = requests.get(url)
+    #result1 = r.json()[0]['word']
+    pass
 
 
 def list_of_words_with_lengths(list_of_lengths):
