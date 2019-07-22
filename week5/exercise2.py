@@ -99,16 +99,25 @@ def abba(source="abba", guard=3):
         Hint: when guard == -1 return the letter.
         """
         if letter == "a":
-            return "a"
+            return "bba"
         elif letter == "b":
-            return "b"
+            return "aob"
         elif letter == "o":
-            return "o"
+            return "oa"
         else:
             return letter
 
-    # write the rest of the function here
-    pass
+    parts = list(source)
+    result=[]
+    for i in parts:
+        """#result = list(map(apply_rules, parts))"""
+        result.append(apply_rules(i, guard))
+    result1 = "".join(result) 
+    guard -= 1
+    if guard > 0:
+        return abba(result1, guard)
+    else:
+        return result1
 
 
 def koch(t, order, size):
