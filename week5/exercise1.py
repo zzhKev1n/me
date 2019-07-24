@@ -226,14 +226,15 @@ def wordy_pyramid(api_key):
 
 def get_a_word_of_length_n(length):
     import requests
-    baseURL = (
-        "http://api.wordnik.com/v4/words.json/randomWords?"
-        "api_key={api_key}"
-        "&minLength={wordlength}"
-        "&maxLength={wordlength}"
-        "&limit=1"
-    )
-    url = baseURL.format(api_key="", wordlength=length)
+    #baseURL = (
+        #"http://api.wordnik.com/v4/words.json/randomWords?"
+        #"api_key={api_key}"
+        #"&minLength={wordlength}"
+        #"&maxLength={wordlength}"
+        #"&limit=1"
+    #)
+    #url = baseURL.format(api_key="", wordlength=length)
+    url = "http://api.wordnik.com/v4/words.json/randomWords?api_key={api_key}&minLength={length}&maxLength={length}&limit=1"
     r = requests.get(url)
     #while r.status_code is not 200:
         #r = requests.get(url)
