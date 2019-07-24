@@ -203,25 +203,31 @@ def wordy_pyramid(api_key):
         "&limit=1"
     )
     pyramid_list = []
+    Dict = {}
     for i in range(3, 21, 2):
-        url = baseURL.format(api_key="", length=i)
+        url = baseURL.format(api_key="ujfllutaqbo8f3connhf4bryua6sw18yujn05v1ojzmyfsxx3", length=i)
         r = requests.get(url)
-        while r.status_code is not 200:
-            print("failed a request", r.status_code, i)
-            r = requests.get(url)
-        message = r.json()[0]["word"]
-        pyramid_list.append(message)
-        print(pyramid_list)
+        #while r.status_code is not 200:
+            #print("failed a request", r.status_code, i)
+            #r = requests.get(url)
+        #message = r.json()[0]["word"]
+        #pyramid_list.append(message)
+        #print(pyramid_list)
+        Dict["word"] = "b"*i
+        pyramid_list.append(Dict['word'])
+    
     for i in range(20, 3, -2):
-        url = baseURL.format(api_key="", length=i)
+        url = baseURL.format(api_key="ujfllutaqbo8f3connhf4bryua6sw18yujn05v1ojzmyfsxx3", length=i)
         r = requests.get(url)
-        while r.status_code is not 200:
-            print("failed a request", r.status_code, i)
-            r = requests.get(url)
-        message = r.json()[0]["word"]
-        pyramid_list.append(message)
+        #while r.status_code is not 200:
+            #print("failed a request", r.status_code, i)
+            #r = requests.get(url)
+        #message = r.json()[0]["word"]
+        #pyramid_list.append(message)
+        Dict["word"] = "b"*i
+        pyramid_list.append(Dict['word'])
         print(pyramid_list)
-    pass
+    return pyramid_list
 
 
 def get_a_word_of_length_n(length):
