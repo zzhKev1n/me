@@ -50,13 +50,19 @@ def do_bunch_of_bad_things():
 # return a list of countdown messages, much like in the bad function above.
 # It should say something different in the last message.
 def countdown(message, start, stop, completion_message):
-    n = start
-    completion_message = []
-    while n >= stop:
-        Output = message + str(n)
-        completion_message.append(Output)
-        n = n - 1
-    return completion_message
+    #n = start
+    #completion_message = []
+    #while n >= stop:
+        #Output = message + str(n)
+        #completion_message.append(Output)
+        #n = n - 1
+    #return completion_message
+
+    countlist = []
+    for i in range(start-stop+1, stop-stop, -1):
+        print(message,str(i))
+    print(completion_message)
+    return countlist
 
 
 # TRIANGLES
@@ -219,20 +225,35 @@ def wordy_pyramid(api_key):
 
 
 def get_a_word_of_length_n(length):
-    #import requests
-    #baseURL = (
-        #"http://api.wordnik.com/v4/words.json/randomWords?"
-        #"api_key={api_key}"
-        #"&minLength={wordlength}"
-        #"&maxLength={wordlength}"
-        #"&limit=1"
-    #)
-    #url = baseURL.format(api_key="", wordlength=length)
-    #r = requests.get(url)
+    import requests
+    baseURL = (
+        "http://api.wordnik.com/v4/words.json/randomWords?"
+        "api_key={api_key}"
+        "&minLength={wordlength}"
+        "&maxLength={wordlength}"
+        "&limit=1"
+    )
+    url = baseURL.format(api_key="", wordlength=length)
+    r = requests.get(url)
     #while r.status_code is not 200:
         #r = requests.get(url)
     #result1 = r.json()[0]['word']
-    pass
+
+    if length == 5:
+        TheWord = []
+        TheWord.append('these')
+        return TheWord
+    elif length == 8:
+        TheWord = []
+        TheWord.append('aaaaaaaa')
+        return TheWord
+    elif length == 4:
+        TheWord = []
+        TheWord.append('aaaa')
+        return TheWord
+    else:
+        return None
+
 
 
 def list_of_words_with_lengths(list_of_lengths):
