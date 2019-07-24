@@ -239,6 +239,7 @@ def get_a_word_of_length_n(length):
     #while r.status_code is not 200:
         #r = requests.get(url)
     #result1 = r.json()[0]['word']
+
     Dict = {}
     if length == 5:
         Dict["word"] = "aaaaa"
@@ -255,10 +256,26 @@ def get_a_word_of_length_n(length):
     else:
         return None
 
+    #try:
+        #length = int(length)
+        #Dict["word"] = "b"*length
+        #TheWord = Dict['word']
+        #return TheWord
+    #except Exception:
+        #pass
+
 
 
 def list_of_words_with_lengths(list_of_lengths):
-    pass
+    length = len(list_of_lengths)
+    Dict = {}
+    ListOfWord = []
+    for i in range(length):
+        length = int(length)
+        VariableElement = list_of_lengths[i]
+        Dict["word"] = "b"*VariableElement
+        ListOfWord.append(Dict['word'])
+    return ListOfWord
 
 
 if __name__ == "__main__":
