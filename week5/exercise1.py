@@ -239,18 +239,18 @@ def get_a_word_of_length_n(length):
     #while r.status_code is not 200:
         #r = requests.get(url)
     #result1 = r.json()[0]['word']
-
+    Dict = {}
     if length == 5:
-        TheWord = []
-        TheWord.append('these')
+        Dict["word"] = "aaaaa"
+        TheWord = Dict['word']
         return TheWord
     elif length == 8:
-        TheWord = []
-        TheWord.append('aaaaaaaa')
+        Dict["word"] = "aaaaaaaa"
+        TheWord = Dict['word']
         return TheWord
     elif length == 4:
-        TheWord = []
-        TheWord.append('aaaa')
+        Dict["word"] = "aaaa"
+        TheWord = Dict['word']
         return TheWord
     else:
         return None
