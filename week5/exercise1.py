@@ -247,28 +247,31 @@ def get_a_word_of_length_n(length):
     #result1 = r.json()[0]['word']
 
     Dict = {}
-    if length == 5:
-        Dict["word"] = "aaaaa"
-        TheWord = Dict['word']
-        return TheWord
-    elif length == 8:
-        Dict["word"] = "aaaaaaaa"
-        TheWord = Dict['word']
-        return TheWord
-    elif length == 4:
-        Dict["word"] = "aaaa"
-        TheWord = Dict['word']
-        return TheWord
-    else:
-        return None
-
-    #try:
-        #length = int(length)
-        #Dict["word"] = "b"*length
+    #if length == 5:
+        #Dict["word"] = "aaaaa"
         #TheWord = Dict['word']
         #return TheWord
-    #except Exception:
-        #pass
+    #elif length == 8:
+        #Dict["word"] = "aaaaaaaa"
+        #TheWord = Dict['word']
+        #return TheWord
+    #elif length == 4:
+        #Dict["word"] = "aaaa"
+        #TheWord = Dict['word']
+        #return TheWord
+    #else:
+        #return None
+
+    try:
+        length = int(length)
+        if length > 0:
+            Dict["word"] = "b"*length
+            TheWord = Dict['word']
+            return TheWord
+        else:
+            pass
+    except Exception:
+        pass
 
 
 
