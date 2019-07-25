@@ -112,7 +112,6 @@ def wordy_pyramid():
         print(Word)
         i = i - 2
     print(Pyramid)
-    Pyramid = ["cep","dwine","tenoner","ectomeric","archmonarch","phlebenterism","autonephrotoxin","redifferentiation","phytosociologically","theologicohistorical","supersesquitertial","phosphomolybdate","spermatophoral","storiologist","concretion","geoblast","Nereis","Leto"]
 
     return Pyramid
 
