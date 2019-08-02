@@ -176,7 +176,10 @@ def random_filler_text(number_of_words=200):
         RanList = Dictionary[str(RandomKey)]
         RandomNum = random.randint(0,2)
         RandomWord = RanList[RandomNum]
-        Text = Text + " " + RandomWord
+        if i == 0:
+            Text = Text + RandomWord
+        elif i > 0:
+            Text = Text + " " + RandomWord
     return Text
 
 
