@@ -194,6 +194,31 @@ def fast_filler(number_of_words=200):
 
     If you get this one to work, you are a Very Good Programmer™!
     """
+    import os
+    import json
+    import random
+    paragraph = ""
+    filepath = "dict_racey.json"
+    if os.path.isfile(filepath):
+        JsnFile = open(filepath, 'r')
+        JsnFile.close
+    else:
+        JsnFile = open(filepath, 'w')
+        Dict = make_filler_text_dictionary()
+        Dict = json.dumps(Dict)
+        JsnFile.write(Dict)
+        JsnFile.close
+    JsnFile = open(filepath).read()
+    Dict = json.loads(JsnFile)
+    for i in range(200):
+        RandomKey = random.randint(3,7)
+        RanList = Dict[str(RandomKey)]
+        RandomNum = random.randint(0,2)
+        RandomWord = RanList[RandomNum]
+        if i == 0:
+            paragraph = paragraph + RandomWord
+        elif i > 0:
+            paragraph = paragraph + " " + RandomWord
 
     return paragraph
 
