@@ -49,7 +49,13 @@ def fizz_buzz():
     """
     fizzBuzzList = []
     # your code here
-
+    for i in range(100):
+        i = i + 1
+        fizzBuzzList.append(i)
+        if i % 3 == 0:
+            fizzBuzzList[i-1] = "Fizz"
+        if i % 5 == 0:
+            fizzBuzzList[i-1] = "Buzz"
     return fizzBuzzList
 
 
