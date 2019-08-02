@@ -142,8 +142,20 @@ def make_filler_text_dictionary():
     """
 
     import requests
-
-    return {}
+    Dict = {}
+    Start = 3
+    Stop = 7
+    for i in range(Start, Stop+1, 1):
+        Number = str(i)
+        Dict[Number] = []
+        url_param = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength=" + str(i)
+        url = str(url_param)
+        for ii in range(3):
+            GetWord = requests.get(url)
+            while GetWord.status_code is not 200:
+                GetWord = requests.get(url)
+            Dict[Number].append(GetWord.text)
+    return Dict
 
 
 def random_filler_text(number_of_words=200):
